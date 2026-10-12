@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="shell">
+    <div class="side"><div class="logo">🚀</div><h2>Create your account</h2><p>Join in less than a minute. Your details are validated and saved to MySQL using Spring Data JPA.</p></div>
+    <section class="form-wrap">
+      <h1>Register</h1>
+      <p class="sub">Fill in the details below</p>
+      <div id="alert" class="alert"></div>
+      <form id="registerForm" novalidate>
+        <div class="field" data-field="name">
+          <label for="name">Full name</label>
+          <div class="input-box"><input type="text" id="name" placeholder="Your name" autocomplete="name"></div>
+          <div class="error"></div>
+        </div>
+        <div class="field" data-field="email">
+          <label for="email">Email</label>
+          <div class="input-box"><input type="email" id="email" placeholder="you@example.com" autocomplete="email"></div>
+          <div class="error"></div>
+        </div>
+        <div class="field" data-field="password">
+          <label for="password">Password</label>
+          <div class="input-box">
+            <input type="password" id="password" placeholder="At least 6 characters" autocomplete="new-password">
+            <button type="button" class="toggle" aria-label="Show password">👁️</button>
+          </div>
+          <div class="strength"><span id="strengthBar"></span></div>
+          <div class="strength-text" id="strengthText"></div>
+          <div class="error"></div>
+        </div>
+        <div class="field" data-field="confirmPassword">
+          <label for="confirmPassword">Confirm password</label>
+          <div class="input-box">
+            <input type="password" id="confirmPassword" placeholder="Re-enter password" autocomplete="new-password">
+            <button type="button" class="toggle" aria-label="Show password">👁️</button>
+          </div>
+          <div class="error"></div>
+        </div>
+        <button type="submit" id="submitBtn" class="btn">Create Account</button>
+      </form>
+      <p class="switch">Already have an account? <a href="login.html">Sign in</a></p>
+    </section>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

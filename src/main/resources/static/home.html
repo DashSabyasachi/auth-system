@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="shell home">
+    <div>
+      <div class="avatar" id="avatar">?</div>
+      <h1 id="welcome">Welcome</h1>
+      <p class="sub">You have logged in successfully 🎉</p>
+      <div class="info">
+        <div><small>Name</small><p id="uName"></p></div>
+        <div><small>Email</small><p id="uEmail"></p></div>
+      </div>
+      <button class="btn outline" id="logoutBtn">Log out</button>
+    </div>
+  </main>
+  <script>
+    const user = JSON.parse(sessionStorage.getItem('user') || 'null');
+    if (!user) {
+      window.location.replace('login.html');
+    } else {
+      document.getElementById('welcome').textContent = 'Hello, ' + user.name + '!';
+      document.getElementById('uName').textContent = user.name;
+      document.getElementById('uEmail').textContent = user.email;
+      document.getElementById('avatar').textContent = user.name.charAt(0).toUpperCase();
+    }
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      sessionStorage.removeItem('user');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
